@@ -15,7 +15,7 @@ import sh
 def deploy(job_name, server_list, app_path, source_address, project_id, auth_info):
     cmd = ""
     p1 = Delivery.objects.get(job_name_id=project_id)
-    job_workspace = "/var/opt/adminset/workspace/{0}/".format(job_name)
+    job_workspace = "/opt/adminset/workspace/{0}/".format(job_name)
     log_path = job_workspace + 'logs/'
     log_name = 'deploy-' + str(p1.deploy_num) + ".log"
     with open(log_path + log_name, 'wb+') as f:

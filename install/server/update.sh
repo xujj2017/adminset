@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
-main_dir="/var/opt/adminset"
+main_dir="/opt/adminset"
 adminset_dir="$main_dir/main"
 data_dir="$main_dir/data"
 config_dir="$main_dir/config"

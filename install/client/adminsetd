@@ -5,7 +5,7 @@
 # chkconfig: - 85 15
 . /etc/init.d/functions
 
-WORK_DIR="/var/opt/adminset/client"
+WORK_DIR="/opt/adminset/client"
 EXEC="$WORK_DIR/venv/bin/python $WORK_DIR/adminset_agent.py"
 
 PIDFILE=$WORK_DIR/adminsetd.pid

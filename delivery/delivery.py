@@ -100,8 +100,8 @@ def delivery_deploy(request, project_id):
     project.deploy_num += 1
     project.save()
     sleep(2)
-    os.system("mkdir -p /var/opt/adminset/workspace/{0}/logs".format(job_name))
-    os.system("mkdir -p /var/opt/adminset/workspace/{0}/scripts".format(job_name))
+    os.system("mkdir -p /opt/adminset/workspace/{0}/logs".format(job_name))
+    os.system("mkdir -p /opt/adminset/workspace/{0}/scripts".format(job_name))
     if app_path == "/":
         return HttpResponse("app deploy destination cannot /")
     # foreign key query need add .all()
@@ -139,7 +139,7 @@ def log2(request, project_id):
     project = Delivery.objects.get(job_name_id=project_id)
     job_name = project.job_name.name
     try:
-        job_workspace = "/var/opt/adminset/workspace/{0}/".format(job_name)
+        job_workspace = "/opt/adminset/workspace/{0}/".format(job_name)
         log_file = job_workspace + 'logs/deploy-' + str(project.deploy_num) + ".log"
         with open(log_file, 'r+') as f:
             line = f.readlines()

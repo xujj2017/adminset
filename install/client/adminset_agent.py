@@ -17,7 +17,7 @@ def log(log_name, path=None):
                 filemode='ab+')
     return logging.basicConfig
 
-log("agent.log", "/var/opt/adminset/client/")
+log("agent.log", "/opt/adminset/client/")
 
 
 def get_ip():

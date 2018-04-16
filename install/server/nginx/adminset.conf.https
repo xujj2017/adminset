@@ -23,11 +23,11 @@ server {
     fastcgi_param   HTTPS               on;
     fastcgi_param   HTTP_SCHEME         https;
 
-    root /var/opt/adminset/main;
+    root /opt/adminset/main;
 
     location /static {
         autoindex on;
-        alias /var/opt/adminset/main/static;
+        alias /opt/adminset/main/static;
     }
 	location / {
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -41,8 +41,8 @@ server {
             break;
         }
     }
-    access_log  /var/opt/adminset/logs/adminset-access.log;
-    error_log  /var/opt/adminset/logs/adminset-error.log info;
+    access_log  /opt/adminset/logs/adminset-access.log;
+    error_log  /opt/adminset/logs/adminset-error.log info;
 }
 server {
     listen 443 ssl;
@@ -63,6 +63,6 @@ server {
             break;
         }
     }
-    access_log  /var/opt/adminset/logs/adminset-access.log;
-    error_log  /var/opt/adminset/logs/adminset-error.log info;
+    access_log  /opt/adminset/logs/adminset-access.log;
+    error_log  /opt/adminset/logs/adminset-error.log info;
 }

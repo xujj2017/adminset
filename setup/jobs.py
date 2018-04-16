@@ -238,8 +238,8 @@ def job_result_del(request):
 @permission_verify()
 def job_backend(request):
     temp_name = "setup/setup-header.html"
-    celery_file = os.path.exists('/var/opt/adminset/pid/w1.pid')
-    beat_file = os.path.exists('/var/opt/adminset/pid/beat.pid')
+    celery_file = os.path.exists('/opt/adminset/pid/w1.pid')
+    beat_file = os.path.exists('/opt/adminset/pid/beat.pid')
     if celery_file:
         celery_disable = "disabled"
         celery_stop_disable = ""

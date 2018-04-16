@@ -3,7 +3,7 @@
 set -e
 cd "$( dirname "$0"  )"
 cur_dir=$(pwd)
-work_dir=/var/opt/adminset/client
+work_dir=/opt/adminset/client
 # 安装依赖包
 os=$(cat /proc/version)
 if (echo $os|grep centos) || (echo $os|grep 'Red Hat')

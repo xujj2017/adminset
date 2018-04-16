@@ -2,7 +2,7 @@
 set -e
 
 # 初始化环境目录
-main_dir="/var/opt/adminset"
+main_dir="/opt/adminset"
 adminset_dir="$main_dir/main"
 data_dir="$main_dir/data"
 config_dir="$main_dir/config"
@@ -87,7 +87,7 @@ fi
 scp $adminset_dir/install/server/ansible/ansible.cfg /etc/ansible/ansible.cfg
 
 # install webssh
-scp /var/opt/adminset/main/install/server/webssh/webssh.service /usr/lib/systemd/system/webssh.service
+scp /opt/adminset/main/install/server/webssh/webssh.service /usr/lib/systemd/system/webssh.service
 systemctl enable webssh.service
 
 
